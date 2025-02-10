@@ -3,9 +3,9 @@ import java.util.EnumSet;
 
 public class ErrorsEnum
 {
-    enum Error { FP_ROUNDING, FP_OVERFLOW, FP_UNDERFLOW, INT_OVERFLOW }
+    enum Result { FP_ROUNDING, FP_OVERFLOW, FP_UNDERFLOW, INT_OVERFLOW }
 
-    enum Result { A_BIT_DIFFERENT, INFINITY, ZERO, VERY_DIFFERENT }
+    enum Error { A_BIT_DIFFERENT, INFINITY, ZERO, VERY_DIFFERENT }
     
     private static <E extends Enum<E>> E getEnumElement(String elementTypeName, Class<E> elementType)
     {
@@ -37,17 +37,17 @@ public class ErrorsEnum
         Result result = null;
         
         switch (e) {
-        case FP_ROUNDING:
-            result = Result.A_BIT_DIFFERENT;
+        case A_BIT_DIFFERENT:
+            result = Result.FP_ROUNDING;
             break;
-        case FP_OVERFLOW:
-            result = Result.INFINITY;
+        case INFINITY:
+            result = Result.FP_OVERFLOW;
             break;
-        case FP_UNDERFLOW:
-            result = Result.ZERO;
+        case ZERO:
+            result = Result.FP_UNDERFLOW;
             break;
-        case INT_OVERFLOW:
-            result = Result.VERY_DIFFERENT;
+        case VERY_DIFFERENT:
+            result = Result.INT_OVERFLOW;
             break;
         }
         
