@@ -103,6 +103,14 @@ public class PlaylistColls {
 
         List<Float> shortItemLengths1 = new ArrayList<>();
         // TASK 5.2(b)...
+        System.out.println("SONGS EQUAL TO OR LESS THAN 20 SECONDS");
+        for (Item item : playlist1){
+            
+            if (item.length_secs <=20){
+                System.out.println(item.toString());
+                shortItemLengths1.add(item.length_secs);
+            }
+        }
 
 
 
