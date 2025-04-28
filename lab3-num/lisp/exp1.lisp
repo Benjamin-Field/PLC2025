@@ -1,17 +1,7 @@
 ; define function exp1
 ; in Java it would be: static float exp1(float a, float b){ return ...; }
 (defun exp1 (a b)
-    (+ 
-     1 (*
-        (+
-            a
-            b)
-        (-
-            a
-            (/
-                1
-                b)))
-    )
+    (+ 1 (*(+ a b) (- a (/ 1 b))))
 )
 
 ; define function get-number
